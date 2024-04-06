@@ -2,7 +2,7 @@ const fs = require('fs');
 const input = fs.readFileSync('/dev/stdin').toString().split("\n").map(v=>v.split(" ").map(v=>+v));
 
 const [n,m]=input[0];
-const points = input.slice(1).map(v=>v.map(n=>n-1));
+const points = input.slice(1,m+1).map(v=>v.map(n=>n-1));
 const map =[];
 for(let r = 0; r<n; r++){
 map.push(Array(n).fill(0))

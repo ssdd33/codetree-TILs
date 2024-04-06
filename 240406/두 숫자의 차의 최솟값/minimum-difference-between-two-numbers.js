@@ -4,7 +4,7 @@ const nums = ns.split(" ").map(v=>+v);
 
 let minDif = nums[1]-nums.shift();
 
-for(let i=0; i<nums.length-1;i++){
+for(let i=0; i<n-2;i++){
     const dif = nums[i+1]-nums[i];
 if(dif<minDif){
     minDif = dif;

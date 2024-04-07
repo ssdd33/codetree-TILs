@@ -15,5 +15,5 @@ if(a<c){
     }
 }
 
-let times = Math.floor(difDays/7)+(dif<=0?0:difDays%7<=dif?1:0);
+let times = Math.floor(difDays/7)+(dif<=0?0:difDays%7>=dif?1:0);
 console.log(times);

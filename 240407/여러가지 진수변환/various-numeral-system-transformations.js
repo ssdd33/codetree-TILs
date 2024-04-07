@@ -8,8 +8,8 @@ while(true){
         arr.unshift(n);
         break;
     }
-    arr.unshift(n%4);
-    n = Math.floor(n/4);
+    arr.unshift(n%b);
+    n = Math.floor(n/b);
 }
 
 console.log(arr.join(""))

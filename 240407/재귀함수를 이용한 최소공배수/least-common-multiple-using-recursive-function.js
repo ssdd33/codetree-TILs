@@ -8,7 +8,6 @@ if(n==1){
     console.log(num);
     return;
 }
-
     let num1 = nums[i]<num?nums[i]:num;
     let num2 = num1==num?nums[i]:num;
 

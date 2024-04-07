@@ -7,8 +7,10 @@ if(a==c){
     console.log(d-b+1);
 }else{
     let sum = daysOfmonth[a]-b+1+d;
+    
     for(let m=a+1; m<c;m++){
-        sum+=daysOfmonth[c]
+        
+        sum+=daysOfmonth[m]
     }
     console.log(sum)
 }

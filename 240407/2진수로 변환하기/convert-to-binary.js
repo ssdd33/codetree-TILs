@@ -7,14 +7,15 @@ if(n==0){
 }else{
 
 while(true){
+    if(n<2){
+    arr.unshift(n);
+    break;
+}
 
 arr.unshift(n%2);
 
 n = Math.floor(n/2)
-if(n<2){
-    arr.unshift(n);
-    break;
-}
+
 }
 console.log(arr.join(''));
 }

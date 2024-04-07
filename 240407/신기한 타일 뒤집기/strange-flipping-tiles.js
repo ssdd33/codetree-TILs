@@ -10,10 +10,10 @@ for(let i = 0; i<p.length;i++){
     const direction = p[i][1];
     const distance = p[i][0];
     const code = direction=='L'?1:0;
-    const si = direction=='L'?cti-distance:cti;
-    const se = direction=='L'?cti:cti+distance;
+    const si = direction=='L'?cti-distance+1:cti;
+    const se = direction=='L'?cti:cti+distance-1;
 
-    for(let t = si; t<se;t++){
+    for(let t = si; t<=se;t++){
         arr[t]=code;
         
     }

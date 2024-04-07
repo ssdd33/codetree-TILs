@@ -4,6 +4,11 @@ const n = +input[0];
 const nums = input[1].split(" ").map(v=>+v).sort((a,b)=>a-b);
 
 function solution(num,i){
+if(n==1){
+    console.log(num);
+    return;
+}
+
     let num1 = nums[i]<num?nums[i]:num;
     let num2 = num1==num?nums[i]:num;
 

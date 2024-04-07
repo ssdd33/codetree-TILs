@@ -21,6 +21,6 @@ if(date1 <date2){
     idxOfday =i;
 }
 }
-console.log(rs[idxOfday].join(" "))
+console.log(rs[idxOfday].join(" ").trim())
 
 }

@@ -6,17 +6,18 @@ const s = input.slice(1,n+1).map(v=>v.split(" ").map(v=>+v));
 const students = [];
 
 class Student{
-    constructor(h,w){
+    constructor(h,w,i){
         this.h = h;
         this.w = w;
+        this.i =i;
     }
 
-    print(i){
-        console.log(`${this.h} ${this.w} ${i}`);
+    print(){
+        console.log(`${this.h} ${this.w} ${this.i}`);
     }
 }
 
-s.forEach(v=>students.push(new Student(...v)));
+s.forEach((v,i)=>students.push(new Student(...v,i+1)));
 
 students.sort((a,b)=>{
     if(a.h==b.h){
@@ -26,4 +27,4 @@ students.sort((a,b)=>{
     }
 })
 
-students.forEach((s,i)=>s.print(i+1))
+students.forEach((s)=>s.print())

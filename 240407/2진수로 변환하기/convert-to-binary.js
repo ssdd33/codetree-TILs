@@ -6,9 +6,15 @@ if(n==0){
     console.log(0)
 }else{
 
-while(n>2){
+while(true){
+
 arr.unshift(n%2);
+
 n = Math.floor(n/2)
+if(n<2){
+    arr.unshift(n);
+    break;
 }
-console.log([1,...arr].join(''));
+}
+console.log(arr.join(''));
 }

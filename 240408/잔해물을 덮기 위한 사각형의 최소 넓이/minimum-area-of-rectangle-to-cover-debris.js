@@ -13,7 +13,7 @@ const [x1,y1,x2,y2]=A;
 function drawSquare(square,mark){
     const [x1,y1,x2,y2]=square;
     for(let r= x1; r<x2;r++){
-        field[r]=[...  field[r]]  
+        field[r]=[...field[r]]  
         for(let c=y1;c<y2;c++){
             field[r][c]=mark;
         }}
@@ -22,9 +22,15 @@ function drawSquare(square,mark){
 drawSquare(A,1);
 drawSquare(B,0);
 
+const totalSize = field.reduce((a,c)=>a+c.filter(v=>v==1).length,0);
+if(totalSize ==0){
+    console.log(0)
+}else{
 
 for(let r=x1;r<x2; r++){
+    
     if(!field[r].filter(v=>v==1).length)continue;
+
    if(r<minX)minX = r;
    if(r>maxX)maxX = r;
     for(let c= y1;c<y2;c++){
@@ -36,3 +42,4 @@ if(field[r][c]==1){
 }
 
 console.log((maxX-minX+1)*(maxY-minY+1))
+}

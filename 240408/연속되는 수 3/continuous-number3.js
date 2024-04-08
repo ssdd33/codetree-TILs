@@ -11,6 +11,7 @@ for(let i=0; i<nums.length; i++){
         if(cnt>maxCnt){
             maxCnt = cnt;
         }
+        cnt=1
     }else{
         cnt++
     }

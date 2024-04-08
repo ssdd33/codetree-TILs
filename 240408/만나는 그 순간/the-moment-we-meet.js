@@ -9,7 +9,7 @@ let btl = [];
 
 function makeTimeLine(snapshot){
 const d = snapshot[0]=='R'?1:-1;
-return  Array(snapshot[1]).fill(d)
+return new Array(snapshot[1]).fill(d)
 
 }
 

@@ -39,11 +39,12 @@ at--;
 bd+=bcv;
 bt--;
 
-var front = ad>bd?'a':'b';
+var front = ad>bd?'a':bd>ad?'b':curFront
 if(curFront!= front){
     
     cnt++;
     curFront = front;
+    
 }
 
 }

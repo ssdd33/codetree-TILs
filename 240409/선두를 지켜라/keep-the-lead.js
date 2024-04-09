@@ -53,4 +53,4 @@ if(curFront!= front){
 
 }
 
-console.log(cnt-1)
+console.log(cnt==0?0:cnt-1)

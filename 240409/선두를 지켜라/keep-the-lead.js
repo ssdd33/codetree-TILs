@@ -41,10 +41,11 @@ bt--;
 
 var front = ad>bd?'a':'b';
 if(curFront!= front){
+    
     cnt++;
     curFront = front;
 }
 
 }
 
-console.log(cnt)
+console.log(cnt-1)

@@ -18,17 +18,21 @@ let bt=0;
 let bi=0;
 
 while(true){
-    
-    if(ai==n||bi==m){
-        break;
-    }
+   
     if(at==0){
+        if(ai==n){
+            break;
+        }
 const cai = a[ai];
 acv = cai[0];
 at=cai[1];
+
 ai++;
     }
     if(bt==0){
+        if(bi==m){
+            break;
+        }
         const bai = b[bi];
         bcv = bai[0]
     bt= bai[1];

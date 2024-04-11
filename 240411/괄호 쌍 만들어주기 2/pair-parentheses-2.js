@@ -1,6 +1,6 @@
 const fs=require('fs');
 const brakets = fs.readFileSync("/dev/stdin").toString().trim();
-
+const n =brakets.length;
 let sum=0;
 
 for(let i=0; i<n-3;i++){

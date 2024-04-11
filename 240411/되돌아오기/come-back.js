@@ -13,6 +13,8 @@ if(idx>0&&x==0&&y==0){
 console.log(cnt)
     break;
 } 
+if(idx==n&&timer==0)break;
+
 if(timer==0){
 const move = moves[idx];
 dir = d[move[0]];

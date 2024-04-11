@@ -24,13 +24,8 @@ for(let i=0;i<4;i++){
     if(inRange(nx,ny)&&field[nx][ny]==1){
         block_cnt++
     }
-    if(block_cnt==3){
-        console.log(1);
-        break;
-    }
+   
 }
-if(block_cnt!=3){
-    console.log(0);
-}
+console.log(block_cnt==3?1:0)
 idx++;
 }

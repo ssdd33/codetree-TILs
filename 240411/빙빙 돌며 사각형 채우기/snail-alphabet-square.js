@@ -10,7 +10,7 @@ function inRange(x,y){
 }
 
 while(cnt<n*m){
-    const code = cnt<26? cnt+65: ((cnt-1)%25)+65;
+    const code = cnt<26? cnt+65: (cnt%26)+65;
     answer[x]=[...answer[x]];
     answer[x][y]=String.fromCharCode(code);
 

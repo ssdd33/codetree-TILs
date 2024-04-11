@@ -7,11 +7,11 @@ let maxSum = -1;
 
 function isThatNum(x,y,z){
     const arrs = [x,y,z].map(n=>n.toString().split("").reverse().map(v=>+v)).sort((a,b)=>a.length-b.length);
-const n = arrs[0].length;
+const n = arrs[arrs.length-1].length;
 
 for(let i=0; i<n; i++){
     let sum = 0;
-    arrs.forEach((n)=>sum+=n[i]);
+    arrs.forEach((n)=>sum+=n[i]==undefined?0:n[i]);
     if(sum>=10) return -1;
 }
 return x+y+z;
@@ -20,6 +20,7 @@ return x+y+z;
 for(let i = 0; i<n-2; i++){
     for(let j=i+1; j<n-1; j++){
         for(let k= j+1; k<n; k++){
+          
 maxSum = Math.max(maxSum,isThatNum(nums[i],nums[j],nums[k]));
         }
     }

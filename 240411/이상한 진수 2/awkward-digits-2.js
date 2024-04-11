@@ -9,9 +9,7 @@ num = num*2+n[j];
         }
         return num;
 }
-if(n.length==1){
-    console.log(n[0]);
-}else {
+
     if(str.indexOf("0")==-1){
 n[n.length-1]=0;
 
@@ -25,4 +23,3 @@ for(let i=0; i<n.length; i++){
 }
 }
 console.log(getDigit())
-}

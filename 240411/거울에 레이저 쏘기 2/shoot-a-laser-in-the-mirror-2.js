@@ -26,18 +26,22 @@ let x,y,d;
 let cnt=0;
 
 if(k<=n){
+    
     x=0;
     y = k-1;
     d= 'U'
-}else if(k<=2n){
+}else if(k<=2*n){
+    
     x = ((k%n)+n-1)%n
     y =n-1;
     d='R';
-}else if(k<=3n){
+}else if(k<=3*n){
+    
     x=n-1;
     y=(n-(k%n))%n;
     d='D';
 }else{
+    
     x=(n-(k%n))%3;
     y=0;
     d='L'
@@ -55,6 +59,8 @@ function getReflectDir(startDir){
         case 3: return 'U';
     }
 }
+
+
 
 while(inRange(x,y)){
     

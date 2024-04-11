@@ -1,7 +1,7 @@
 const fs =require('fs');
 const input = fs.readFileSync("/dev/stdin").toString().split("\n");
 const [r,c] = input[0].trim().split(" ").map(v=>+v);
-const grid = input.slice(1,n+1).map(v=>v.split(" "));
+const grid = input.slice(1,r+1).map(v=>v.split(" "));
 
 let sum =0;
 

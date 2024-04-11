@@ -8,7 +8,7 @@ const dx =[0,0,1,-1];
 const dy=[1,-1,0,0];
 const d= {'E':0,'W':1,'S':2,'N':3};
 
-while(idx<n||timer>0){
+while(idx<n||timer>=0){
 if(idx>0&&x==0&&y==0){
 console.log(cnt)
     break;

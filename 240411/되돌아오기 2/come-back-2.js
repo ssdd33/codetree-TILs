@@ -6,12 +6,15 @@ let[x,y,dir,idx]=Array(4).fill(0);
 const dx = [-1,0,1,0];
 const dy= [0,1,0,-1];
 
-while(idx<n){
-    if(idx>0&&x==0&&y==0){
-        console.log(idx);
-        break;
-    }
-
+while(true){
+ if(idx>0&&x==0&&y==0){
+    console.log(idx);
+    break;
+ }
+ if(idx==n){
+    console.log(-1)
+    break;
+ }
     const move = moves[idx];
     if(move=='F'){
         x+=dx[dir];
@@ -24,8 +27,4 @@ dir = (dir+1)%4;
         dir = (dir+3)%4;
     }
     idx++;
-}
-
-if(x!=0||y!=0){
-    console.log(-1);
 }

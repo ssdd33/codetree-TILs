@@ -6,7 +6,7 @@ const nums = input.slice(1,n+1);
 let maxSum = -1;
 
 function isThatNum(x,y,z){
-    const arrs = arguments.map(n=>n.toString().split("").reverse().map(v=>+v)).sort((a,b)=>a.length-b.length);
+    const arrs = [x,y,z].map(n=>n.toString().split("").reverse().map(v=>+v)).sort((a,b)=>a.length-b.length);
 const n = arrs[0].length;
 
 for(let i=0; i<n; i++){

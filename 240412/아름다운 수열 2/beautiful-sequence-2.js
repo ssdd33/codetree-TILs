@@ -1,5 +1,5 @@
 const fs =require('fs');
-const input = fs.readFileSync("/dev/stdin").toString().split("\n").map(v=>v.split(" ").map(v=>+v));
+const input = fs.readFileSync("/dev/stdin").toString().split("\n").map(v=>v.trim().split(" ").map(v=>+v));
 const [n,m]=input[0];
 const seqA = input[1];
 const seqB =input[2];

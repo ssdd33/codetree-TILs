@@ -11,13 +11,17 @@ for(let i=0; i<seq.length;i++){
 arr[seq[i][0]]=seq[i][1];
 }
 
+
 while(max>1){
     let done = false;
 for(let i=0; i<arr.length-max+1;i++){
-    if(arr[i]==0||arr[i+max-1]==0)continue
+ 
+    if(arr[i]==0||arr[i+max-1]==0)continue;
     const section = arr.slice(i,i+max);
-    const g_cnt = section.filter(v=>v=='G');
-    const h_cnt =section.filter(v=>v=='H');
+    const g_cnt = section.filter(v=>v=='G').length;
+    const h_cnt =section.filter(v=>v=='H').length;
+
+   
     if(g_cnt==0||h_cnt==0||g_cnt==h_cnt){
         done=true;
         break;

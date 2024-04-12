@@ -3,7 +3,7 @@ const input =fs.readFileSync("/dev/stdin").toString().split("\n");
 const n = +input[0];
 let seq = input.slice(1,1+n).map(v=>v.split(" ")).map(v=>[+v[0],v[1]]);
 seq = seq.sort((a,b)=>b[0]-a[0]);
-const arr = Array(seq[0][0]).fill(0);
+const arr = Array(seq[0][0]+1).fill(0);
 
 let max = seq[0][0];
 

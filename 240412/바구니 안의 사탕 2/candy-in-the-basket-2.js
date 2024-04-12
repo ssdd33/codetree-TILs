@@ -8,13 +8,16 @@ let arr = Array(arr_length).fill(0);
 
 let max = Number.MIN_SAFE_INTEGER;
 for(let i =0; i<c.length;i++){
-    arr[c[i][1]]=c[i][0];
+    
+    arr[c[i][1]]+=c[i][0];
 }
 
 for(let i = k+1; i<arr_length-k;i++){
 const section = arr.slice(i-k,i+k+1);
+const sum =section.reduce((a,c)=>a+c)
 
-max = Math.max(max,section.reduce((a,c)=>a+c))
+max = Math.max(max,sum)
+
 }
 
 console.log(max)

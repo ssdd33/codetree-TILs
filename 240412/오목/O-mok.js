@@ -6,7 +6,6 @@ for(let i=0; i<19;i++){
     for(let j=0;j<19;j++){
  const st = grid[i][j];
     if(st!=0){
-      
         //가로
         if(j<15){
               let isWin = true;
@@ -15,10 +14,9 @@ for(let i=0; i<19;i++){
                     isWin=false;
                     break;
                 }
-               
             }
              if(isWin){
-
+                
                     winner =st;
                   mid = `${i+1} ${j+3}`;
                   break;
@@ -33,13 +31,12 @@ for(let k=i+1; k<i+5;k++){
         isWin=false;
         break;
     }
-     if(isWin){
+}
+ if(isWin){
                     winner =st;
                   mid = `${i+3} ${j+1}`;
                   break;
                 }
-                
-}
         }
         //대각선
         //오른쪽
@@ -52,6 +49,7 @@ for(let k=i+1; k<i+5;k++){
                 }
             }
             if(isWin){
+                
                 winner= st;
                 mid = `${i+3} ${j+3}`
                 break;
@@ -68,6 +66,7 @@ for(let k=1; k<5; k++){
     }
 }
 if(isWin){
+    
     winner = st;
     mid = `${i+3} ${j-1}`;
     break;

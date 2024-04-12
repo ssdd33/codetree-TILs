@@ -11,7 +11,7 @@ for(let i =0; i<c.length;i++){
     arr[c[i][1]]=c[i][0];
 }
 
-for(let i = k+1; i<arr_length-k+1;i++){
+for(let i = k+1; i<arr_length-k;i++){
 const section = arr.slice(i-k,i+k+1);
 
 max = Math.max(max,section.reduce((a,c)=>a+c))

@@ -3,7 +3,7 @@ const input = fs.readFileSync("/dev/stdin").toString().split("\n").map(v=>v.spli
 const [n,k] = input[0].map(v=>+v);
 let line = input.slice(1,1+n).map(v=>[+v[0],v[1]]);
 line = line.sort((a,b)=>b[0]-a[0]);
-const arr_length = k>line[0]?k+1:line[0]+1
+const arr_length = k>line[0]?k+2:line[0]+1
 let arr = Array(arr_length).fill(0);
 
 let max = Number.MIN_SAFE_INTEGER;

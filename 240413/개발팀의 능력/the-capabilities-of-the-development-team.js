@@ -3,7 +3,7 @@ const s = fs.readFileSync("/dev/stdin").toString().trim().split(" ").map(v=>+v);
 const n =s.length;
 const t = s.reduce((a,c)=>a+c);
 
-let min = Number.MIN_SAFE_INTEGER;
+let min = Number.MAX_SAFE_INTEGER;
 
 function getSum(i,j){
     return s[i]+s[j]
@@ -30,7 +30,7 @@ for(let t1a = 0; t1a <n-1; t1a++){
     }
 }
 
-if(min!=Number.MIN_SAFE_INTEGER){
+if(min!=Number.MAX_SAFE_INTEGER){
     console.log(min)
 }else{
     console.log(-1)

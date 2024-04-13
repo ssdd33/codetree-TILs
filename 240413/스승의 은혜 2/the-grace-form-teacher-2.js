@@ -10,6 +10,7 @@ for(let i=n-1; i>=0; i--){
     let left_b = b- s[i]/2;
     let cnt =1;
     for(let j=0;j<n;j++){
+        if(i==j)continue
 if(left_b-s[j]<0)break;
 left_b -=s[j];
 cnt++;

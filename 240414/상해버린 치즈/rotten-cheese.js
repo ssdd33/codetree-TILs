@@ -8,7 +8,7 @@ const sick = input.slice(1+d,1+d+s);
 if(n==sick.length){
     console.log(n)
 }else{
-    let max = 0;
+let max = 0;
 let rotten = Array(m+1).fill(0);
 
 sick.forEach(v=>{
@@ -20,7 +20,7 @@ sick.forEach(v=>{
 })
 
 let suspect=[];
-rotten.forEach((v,i)=>{if(v==sick.length)suspect.push(i)});
+rotten.forEach((v,i)=>{if(v>=sick.length)suspect.push(i)});
 
 suspect.forEach(v=>{
 let eat_rotten = Array(n+1).fill(false);
@@ -31,6 +31,7 @@ eat.forEach(e=>{
 
 max = Math.max(max,eat_rotten.filter(v=>v).length)
 })
+
 console.log(max)
 
 }

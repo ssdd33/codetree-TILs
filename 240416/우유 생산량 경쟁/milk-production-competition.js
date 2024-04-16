@@ -12,7 +12,7 @@ for(let i=0;i<n;i++){
     const [d,c,p]=cows[i];
     let np = produce[c]+p;
     produce[c]=np;
-    max = Math.max(max,...Object.values(produce))
+    max = Math.max(...Object.values(produce))
 let temp =[];
 for(cow in produce){
     if(max==produce[cow]){
@@ -22,9 +22,11 @@ for(cow in produce){
 temp.sort();
 const nd = temp.join("");
 if(display!=nd){
+
     display =nd;
     cnt++
 }
+
 
 }
 

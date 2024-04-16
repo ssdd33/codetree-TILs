@@ -10,13 +10,16 @@ let max =0;
 
 for(let i=n-1;i>=0;i--){
     const [p,s] =sp[i];
-    let sum = p/2+s;
+    let sum = (p/2)+s;
     let cnt = 1;
     for(let j=0;j<n;j++){
         if(i==j)continue;
         const [ap,as]=sp[j];
-        const nsum = sum+ap/2+as;
-        if(nsum>b)break;
+        const nsum = sum+ap+as;
+        
+        if(nsum>b){
+            
+            break;}
         sum = nsum;
         cnt++;
     }

@@ -7,7 +7,7 @@ const max_b = Math.floor(c/b);
 let max = 0;
 
 for(let i = 0;i<=max_b;i++){
-    if(c-b*i>=a){
+    
    for(let j=0; j<max_a;j++){
         const num =b*i + a*j;
         if(num<=c){
@@ -15,7 +15,7 @@ for(let i = 0;i<=max_b;i++){
        max=Math.max(max, num)
         }
     }
-    }
+    
  
 }
 

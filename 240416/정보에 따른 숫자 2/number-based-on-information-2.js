@@ -12,9 +12,10 @@ const sd = s.map(v=>Math.abs(i-v));
 const nd = n.map(v=>Math.abs(i-v));
 
 sd.sort((a,b)=>a-b);
-nd.sort((a,b)=>b-a);
+nd.sort((a,b)=>a-b);
 
 if(sd[0]<=nd[0]){
+
     cnt++
 }
 

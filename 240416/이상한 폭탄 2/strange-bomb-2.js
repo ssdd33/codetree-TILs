@@ -5,7 +5,7 @@ const bs = input.slice(1,1+n).map(v=>+v);
 
 let biggest = -1;
 
-for(let i=0; i<n-k;i++){
+for(let i=0; i<=n-k;i++){
    if(bs[i]==bs[i+k]){
     biggest = Math.max(biggest,bs[i])
    }

@@ -21,9 +21,13 @@ for(let i=0; i<n;i++){
                 from[i]=t;
                 from[j]=f;
                 cnt++
+                break;
             }else{
                 if(j==n-1){
                     noMoreSwitch = true;
+                    from[i]=t;
+                    cnt++;
+                
                 }
             }
           }

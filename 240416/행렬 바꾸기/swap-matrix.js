@@ -2,7 +2,7 @@ const fs = require('fs');
 const input =fs.readFileSync("/dev/stdin").toString().split("\n").map(v=>v.split(" ").map(v=>+v));
 const [n,m]=input[0];
 let from = input.slice(1,n+1);
-const to = input.slice(1+n,1+n+m)
+const to = input.slice(1+n,1+n+n)
 
 let cnt = 0;
 let done =false;
@@ -18,6 +18,7 @@ function isSame(f,t){
 
 for(let i=0;i<n-2;i++){
     for(let j=0;j<m-2;j++){
+    
      if(from[i][j]!=to[i][j]){
         for(let k=i;k<i+3;k++){
             for(let l =j;l<j+3;l++){

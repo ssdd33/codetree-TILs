@@ -17,8 +17,8 @@ for(let i=1; i<=3; i++){
         cups[b]=a_r;
         if(cups[c]==1){cnt++}
     }
-    cnts.push(cnt);
+    
     max =Math.max(max,cnt);
 }
 
-console.log(cnts.indexOf(max)+1)
+console.log(max)

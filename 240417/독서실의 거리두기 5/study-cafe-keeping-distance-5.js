@@ -11,8 +11,9 @@ for(let i=0; i<n;i++){
    s[i]=1
    let min= n;
    let cnt=0;
-   for(let si=0;si<n;si++){
-if(s[si]==0){
+   let arr = s.slice(s.indexOf(1),s.lastIndexOf(1)+1);
+   for(let si=0;si<arr.length;si++){
+if(arr[si]==0){
     cnt++
 }else if(si!=0){
     min = Math.min(min,cnt+1);

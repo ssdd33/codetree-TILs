@@ -7,7 +7,7 @@ const c = input.slice(1,n+1).map(v=>v.split(" ").map(Number));
 
 
 
-for(let i=1;i<11;i++){
+for(let i=1;i<10001;i++){
     let isThatNum = true;
     for(let j=1;j<=n;j++){
 const powNum = Math.pow(2,j)*i;

@@ -22,7 +22,7 @@ function isPossibleMin(x){
     return true;
 }
 
-for(let i= Math.min(nums[0],nums[n-1]);i<=n;i++){
+for(let i= Math.max(nums[0],nums[n-1]);i<=n;i++){
    
     if(isPossibleMin(i)){
         console.log(i);

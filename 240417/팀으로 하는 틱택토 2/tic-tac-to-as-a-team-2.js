@@ -12,14 +12,16 @@ for(let i=1; i<9;i++){
 //---------------------------가로
 let win =false;
 for(let x=0;x<3;x++){
-    let fill =true;
+    let i_cnt=0;
+    let j_cnt=0;
     for(let y=0;y<3;y++){
-      if(b[x][y]!=i&&b[x][y]!=j){
-        fill=false;
+      if(b[x][y]!=i&&b[x][y]!=j){ 
         break;
       }
+      if(b[x][y]==i)i_cnt++
+      if(b[x][y]==j)j_cnt++
     }
-   if(fill){
+   if(i_cnt>0&&j_cnt>0&&(i_cnt+j_cnt==3)){
     win=true;
     break;
    }
@@ -31,14 +33,16 @@ if(win){
 }
 //----------------------세로
 for(let y=0;y<3;y++){
-    let fill=true;
+    let i_cnt=0;
+    let j_cnt=0;
     for(let x=0;x<3;x++){
       if(b[x][y]!=i&&b[x][y]!=j){
-        fill=false;
         break;
       }
+        if(b[x][y]==i)i_cnt++
+      if(b[x][y]==j)j_cnt++
     }
-      if(fill){
+      if(i_cnt>0&&j_cnt>0&&(i_cnt+j_cnt==3)){
     win=true;
     break;
    }
@@ -50,27 +54,32 @@ if(win){
 }
 //---------------------대각선 오 아래
 
-let fill =true;
+ let i_cnt=0;
+  let j_cnt=0;
 for(let k=0; k<3; k++){
 if(b[k][k]!=i&&b[k][k]!=j){
-    fill =false;
     break;
 }
+     if(b[k][k]==i)i_cnt++
+      if(b[k][k]==j)j_cnt++
 }
-if(fill){
+if(i_cnt>0&&j_cnt>0&&(i_cnt+j_cnt==3)){
     
     cnt++
     break;
 }
 //---------------------대각선 왼 아래
-fill=true;
+ i_cnt=0;
+ j_cnt=0;
 for(let k=0;k<3;k++){
     if(b[k][2-k]!=i&&b[k][2-k]!=j){
-        fill=false;
+     
         break;
     }
+     if(b[k][2-k]==i)i_cnt++
+      if(b[k][2-k]==j)j_cnt++
 }
-if(fill){
+if(i_cnt>0&&j_cnt>0&&(i_cnt+j_cnt==3)){
     
     cnt++
     break;

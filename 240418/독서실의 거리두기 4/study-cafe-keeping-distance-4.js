@@ -23,9 +23,11 @@ for(let k=0;k<from_to.length; k++){
 
 const seat = from_to[k];
 if(seat==1&&k!=0){
+    const prevMin = min;
     min = Math.min(min,cnt+1);
+  
     cnt=0;
-}else{
+}else if(seat==0){
     cnt++;
 }
 

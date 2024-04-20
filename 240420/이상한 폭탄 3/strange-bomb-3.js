@@ -19,7 +19,7 @@ for(let t =0; t<distances.length;t++){
     if(distances[t+1]-distances[t]<=k||distances[t]-distances[t-1]<=k)cnt++
 }
 
-if(max_cnt==cnt){
+if(max_cnt==cnt&&cnt!=0){
     max_b = Math.max(max_b,cur_b);
 }else if(max_cnt<cnt){
     max_cnt = cnt;

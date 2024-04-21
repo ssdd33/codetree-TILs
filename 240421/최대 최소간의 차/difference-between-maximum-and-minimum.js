@@ -1,5 +1,5 @@
 const fs =require('fs')
-const input = fs.readFileSync("/dev/stdin").toString().split("\n").map(v=>v.split(" ").map(Number));
+const input = fs.readFileSync("/dev/stdin").toString().split("\n").map(v=>v.trim().split(" ").map(Number));
 const [n,k]=input[0];
 const nums = input[1];
 

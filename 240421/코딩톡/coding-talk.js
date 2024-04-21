@@ -7,7 +7,7 @@ const isRead = Array(n).fill(false);
 
 for(let i=p-1;i<m;i++){
     const [d,u]=msg[i];
-
+if(i==p-1&&u==0)break;
     isRead[d.charCodeAt()-65] =true;
 }
 

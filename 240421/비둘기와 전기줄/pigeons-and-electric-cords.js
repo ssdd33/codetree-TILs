@@ -9,11 +9,10 @@ const cnt = Array(11).fill(0);
 for(let i=0; i<n;i++){
     const [pg,pp]=ps[i];
 
-    if(position[pg]==2){
-        position[pg]=pp;
-    }else if(position[pg]!=pp){
+ if(position[pg]!=2&&position[pg]!=pp){
        cnt[pg]++; 
     }
+         position[pg]=pp
 }
 
 console.log(cnt.reduce((a,c)=>a+c))

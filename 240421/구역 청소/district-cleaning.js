@@ -4,9 +4,5 @@ const [[a,b],[c,d]]=fs.readFileSync("/dev/stdin").toString().split("\n").map(v=>
 if(b<c||d<a){
     console.log(b-a+d-c)
 }else{
-    if(b>d){
-        console.log(b-c);
-    }else{
-        console.log(d-a)
-    }
+    console.log(Math.max(b,d)-Math.min(a,c))
 }

@@ -12,7 +12,7 @@ for(let i=0; i<n; i++){
     let cnt = l;
     for(let j=0; j<n;j++){
         if(cnt==0)break;
-        if(nums[j]<num){
+        if(nums[j]+1==num){
 arr[j]++;
 cnt--;
         }

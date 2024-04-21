@@ -3,9 +3,8 @@ const input =fs.readFileSync("/dev/stdin").toString().split("\n");
 const [n,m,p]=input[0].split(" ").map(Number);
 const msg = input.slice(1,1+m).map(v=>v.split(" ")).map(v=>[v[0],+v[1]]);
 
-if(msg[p-1][1]==0){
-    console.log(0)
-}else{
+if(msg[p-1][1]!=0){
+  
    const isRead = Array(n).fill(false);
 
 for(let i=p-1;i<m;i++){

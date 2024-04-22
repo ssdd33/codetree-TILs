@@ -20,4 +20,11 @@ ry = grid[rx].indexOf('R')
 by = grid[bx].indexOf("B");
 ly = grid[lx].indexOf("L");
 
-console.log(Math.abs(bx-lx)+Math.abs(by-ly)-1)
+let d = Math.abs(bx-lx)+Math.abs(by-ly);
+
+if((bx==lx&&lx==rx)||(by==ly&&ly==ry)){
+d++;
+}else{
+d--;
+}
+console.log(d)

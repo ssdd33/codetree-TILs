@@ -30,7 +30,7 @@ for(let i=0; i<n;i++){
            d_cnt=0;
     }else{
   d_cnt++;
-  if(i==n-1&&d_cnt*2>=maxDist){
+  if(i==n-1&&d_cnt*2>=cal_max_d()){
 maxDist = d_cnt;
 [max_i,max_j]=[max_j,-1]
   }

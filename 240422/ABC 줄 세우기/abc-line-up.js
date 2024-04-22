@@ -14,7 +14,7 @@ function moveBackward(l,as_is_idx,to_be_idx){
 let min =Number.MAX_SAFE_INTEGER;
 
 function check(seq,cnt){
-if(cnt>n*3)return -1;
+if(cnt>n*2)return -1;
     let isDone=true;
    
     for(let i=0; i<n; i++){

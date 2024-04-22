@@ -90,10 +90,11 @@ nl = moveBackward([...seq],i,to_be)
     }
 
     if(isDone){
-  console.log(cnt)
-done =true;
+  min = Math.min(min,cnt)
+
     }
     return;
 }
 
 check(l,0)
+console.log(min)

@@ -8,4 +8,6 @@ sorted.sort((a,b)=>a-b);
 
 
 const idx = nums.indexOf(sorted[1]);
-console.log(idx<0?idx:idx+1)
+const l_idx = nums.lastIndexOf(sorted[1]);
+
+console.log(idx<0||idx!=l_idx?-1:idx+1)

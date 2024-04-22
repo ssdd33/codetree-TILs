@@ -1,7 +1,7 @@
 const fs =require('fs');
 const input =fs.readFileSync("/dev/stdin").toString().split("\n");
 const n =+input[0];
-const seats = input[1].trim().split("").map(Number);
+let seats = input[1].trim().split("").map(Number);
 
 let maxDist =0;
 let [max_i,max_j] = [-1,-1];
@@ -46,10 +46,11 @@ seats[n-1]=1;
 }else{
 seats[max_i+ Math.ceil((max_j-max_i)/2)] =1;
 }
-
+seats = seats.slice(seats.indexOf(1),seats.lastIndexOf(1)+1)
 let min = n;
 let cnt =0;
 for( let i=0; i<n;i++){
+
 if(seats[i]==1&&i!=0){
   min = Math.min(min,cnt+1)
   cnt=0;

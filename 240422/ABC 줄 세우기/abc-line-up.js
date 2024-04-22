@@ -9,13 +9,7 @@ let l = input[1].split(" ")
 //     return char.charCodeAt()-65;
 // }
 
-// function moveFoward(as_is_idx,to_be_idx){
-// return [...l.slice(0,to_be_idx),l[as_is_idx],...l.slice(to_be_idx,as_is_idx),...l.slice(as_is_idx+1,n)];
-// }
 
-// function moveBackward(as_is_idx,to_be_idx){
-//     return [...l.slice(0,as_is_idx),...l.slice(as_is_idx+1,to_be_idx),l[as_is_idx],...l.slice(to_be_idx,n)];
-// }
 //  let non_seq_cnt = 0;
 
 // while(true){
@@ -67,32 +61,39 @@ let l = input[1].split(" ")
 
 
 let min = Number.MAX_SAFE_INTEGER;
+let done = false;
+function moveFoward(l,as_is_idx,to_be_idx){
+return [...l.slice(0,to_be_idx),l[as_is_idx],...l.slice(to_be_idx,as_is_idx),...l.slice(as_is_idx+1,n)];
+}
 
+function moveBackward(l,as_is_idx,to_be_idx){
+    return [...l.slice(0,as_is_idx),...l.slice(as_is_idx+1,to_be_idx+1),l[as_is_idx],...l.slice(to_be_idx+1,n)];
+}
 function check(seq,cnt){
+    // if(done)return;
     let isDone=true;
     for(let i=0; i<n; i++){
         const to_be = seq[i].charCodeAt()-65;
         if(to_be==i)continue;
-isDone=false;
-const nl = [...seq]
+     isDone=false;
+let nl;
         if(to_be>i){
-//뒤로 한칸 
-const [a,b]=[nl[i+1],nl[i]]
-nl[i]=a;
-nl[i+1]=b
+//뒤로 
+nl = moveBackward([...seq],i,to_be)
+
         }else{
-const[a,b]=[nl[i-1],nl[i]]
-nl[i]=a;
-nl[i-1]=b;
+            nl = moveFoward([...seq],i,to_be)
+
         }
-        return check(nl,cnt+1)
+        
+   return check(nl,cnt+Math.abs(i-to_be))
     }
 
     if(isDone){
-        min = Math.min(min,cnt)
+  console.log(cnt)
+done =true;
     }
     return;
 }
 
 check(l,0)
-console.log(min)

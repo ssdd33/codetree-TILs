@@ -26,7 +26,7 @@ let d = Math.abs(bx-lx)+Math.abs(by-ly);
 
 if((bx==lx&&lx==rx)||(by==ly&&ly==ry)){
     if((bx>lx&&rx>bx)||(bx>lx&&rx<lx)||(bx<lx&&rx<bx)||(bx<lx&&rx>lx)||(by>ly&&ry>by)||(by>ly&&ry<ly)||(by<ly&&ry<by)||(by<ly&&ry>ly)){
-d-=2;
+d--;
     }else{
 
 d++;

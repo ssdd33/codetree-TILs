@@ -46,12 +46,15 @@ seats[n-1]=1;
 }else{
 seats[max_i+ Math.ceil((max_j-max_i)/2)] =1;
 }
+
 seats = seats.slice(seats.indexOf(1),seats.lastIndexOf(1)+1)
+
+
 let min = n;
 let cnt =0;
-for( let i=0; i<n;i++){
+for( let i=1; i<n;i++){
 
-if(seats[i]==1&&i!=0){
+if(seats[i]==1){
   min = Math.min(min,cnt+1)
   cnt=0;
 }else{

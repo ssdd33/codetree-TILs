@@ -1,8 +1,12 @@
 const fs =require('fs');
 const [a,b,c] = fs.readFileSync("/dev/stdin").toString().trim().split(" ").map(Number);
+const l = b-a;
+const r = c-b;
 
-if(b-a<=2||c-b<=2){
-    console.log(Math.floor(Math.min(b-a,c-b)/2));
+if(l==2||r==2){
+    console.log(1);
+}else if(l==3||r==3){
+    console.log(2);
 }else{
-    console.log(2)
+    console.log(0)
 }

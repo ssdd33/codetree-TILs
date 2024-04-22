@@ -6,4 +6,6 @@ const nums = input[1].split(" ").map(Number);
 const sorted = [...Array.from(new Set(nums))];
 sorted.sort((a,b)=>a-b);
 
-console.log(nums.indexOf(sorted[1])+1)
+
+const idx = nums.indexOf(sorted[1]);
+console.log(idx<0?idx:idx+1)

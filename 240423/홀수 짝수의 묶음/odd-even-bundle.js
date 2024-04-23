@@ -23,7 +23,7 @@ console.log(o*2+(e-o>0?1:0))
 
 
 }else{
-console.log(e,o)
+
 for(let i=3;i<=5;i+=2){
     
     const min_odd_cnt =e>0?e-1:0;

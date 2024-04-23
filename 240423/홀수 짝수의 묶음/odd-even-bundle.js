@@ -22,6 +22,9 @@ if(e==1&&o==1){
 console.log(o*2+(e-o>0?1:0))
 
 
+}else if((o-e)%2==0){
+console.log(e*2+((o-e)/2))
+
 }else{
 
 for(let i=3;i<=5;i+=2){

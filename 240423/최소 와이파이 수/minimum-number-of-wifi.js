@@ -8,8 +8,13 @@ let cnt = 0;
 let idx=0;
 while(idx<n){
 
-if(hs[idx]==1)cnt++
-idx+=m*2+1
+if(hs[idx]==1){
+    cnt++
+    idx+=m*2+1}else{
+        idx++;
+    }
+
+
 }
 
 console.log(cnt)

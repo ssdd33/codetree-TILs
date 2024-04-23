@@ -12,20 +12,15 @@ nums.forEach(v=>{
 o++;
     }
 })
-if(e==1&&o==1){
-    console.log(2)
-
-}else if(e==0&&o==2){
-    console.log(1)
-
-}else if(e>=o){
+if(e>=o){
 console.log(o*2+(e-o>0?1:0))
 
 
-}else if((o-e)%2==0){
-console.log(e*2+((o-e)/2))
-
 }else{
+let cnt = e*2;
+
+o = o-e;
+e=0;
 
 for(let i=3;i<=5;i+=2){
     
@@ -52,7 +47,7 @@ total_e = e+p_cnt;
 
 if(total_e-total_o<=1){
 
-    console.log(total_e+total_o);
+    console.log(total_e+total_o+cnt);
     break;
 }
 }

@@ -14,14 +14,14 @@ while(nums.join("")!=to_be){
 const num =nums.shift();
 for(let i=n-2; i>=1;i--){
 
-if(nums[i]>num&&(nums[i-1]<num||nums[i]<nums[i-1])){
+if(nums[i]<num){
+    nums=[...nums,num];
+    cnt++
+    break;
+}else if(nums[i]>num&&(nums[i-1]<num||nums[i]<nums[i-1])){
 nums =[...nums.slice(0,i),num,...nums.slice(i,n-1)]
 cnt++
 break;
-}else if(i==1){
-    nums = [...nums,num]
-    cnt++
-    break;
 }
 }
 }

@@ -21,9 +21,11 @@ for(let i=n-2; i>=2;i--){
         nums =[...nums.slice(0,i),num,...nums.slice(i,n-1)]
     }
     cnt++
+    break;
 }else if(nums[i]>num&&nums[i-1]<num){
 nums =[...nums.slice(0,i),num,...nums.slice(i,n-1)]
 cnt++
+break;
 }
 }
 }

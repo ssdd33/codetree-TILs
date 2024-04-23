@@ -17,38 +17,29 @@ console.log(o*2+(e-o>0?1:0))
 
 
 }else{
+    
 let cnt = e*2;
 
 o = o-e;
 e=0;
 
 for(let i=3;i<=5;i+=2){
-    
-    const min_odd_cnt =e>0?e-1:0;
+
     const p_cnt = Math.floor(o/i);
     const left = o%i;
+   cnt+=(p_cnt*2)
+if(left>1&&left%2!=0)continue;
+   if(left%2==0){
+        cnt++;
+    }else if(left==3){
+cnt+=2;
 
-let total_o = 0;
-let total_e = 0;
-
-if(left==0){
-
-total_o = p_cnt;
-total_e = e+p_cnt;
-}else if(left%2==0){
-
-total_o = p_cnt;
-total_e = e+p_cnt+(left/2)
-}else{
-    if(left/(i-2)>min_odd_cnt)continue;
-total_o = p_cnt+(left/(i-2))
-total_e = e+p_cnt;
+    }else{
+        cnt--;
+    }
+break;
 }
 
-if(total_e-total_o<=1){
+console.log(cnt)
 
-    console.log(total_e+total_o+cnt);
-    break;
-}
-}
 }

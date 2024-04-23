@@ -12,14 +12,18 @@ let cnt =0;
 while(nums.join("")!=to_be){
     
 const num =nums.shift();
-for(let i=n-2; i>=1;i--){
-if(nums[i]>num){
+for(let i=n-2; i>=2;i--){
+ if(i==2){
+    if(num>nums[i]){
+
+    nums = [...nums,num]
+    }else{
+        nums =[...nums.slice(0,i),num,...nums.slice(i,n-1)]
+    }
+    cnt++
+}else if(nums[i]>num&&nums[i-1]<num){
 nums =[...nums.slice(0,i),num,...nums.slice(i,n-1)]
 cnt++
-break;
-}else if(i==1){
-    nums = [...nums,num]
-    cnt++
 }
 }
 }

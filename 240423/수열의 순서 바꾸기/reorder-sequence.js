@@ -1,30 +1,27 @@
 const fs =require('fs');
 const input =fs.readFileSync("/dev/stdin").toString().split("\n");
 const n =+input[0];
-const nums = input[1].split(" ").map(Number);
+let nums = input[1].split(" ").map(Number);
 
-let min = Number.MAX_SAFE_INTEGER;
+
 const temp = [...nums];
 temp.sort((a,b)=>a-b);
 const to_be = temp.join("")
+let cnt =0;
 
-
-function check(seq,cnt){
-if(seq.join("")==to_be){
-    return cnt;
-}else if(cnt>n*1.5){
-    return -1;
+while(nums.join("")!=to_be){
+    
+const num =nums.shift();
+for(let i=n-2; i>=1;i--){
+if(nums[i]>num){
+nums =[...nums.slice(0,i),num,...nums.slice(i,n-1)]
+cnt++
+break;
+}else if(i==1){
+    nums = [...nums,num]
+    cnt++
 }
-    for(let i=Math.ceil(nums.length/2)-1;i<Math.ceil(nums.length/2);i++){
-        const num = seq.shift();
-
-const n_seq = [...seq.slice(0,i),num,...seq.slice(i,seq.length)]
-const result = check(n_seq,cnt+1);
-if(result>0){
-    min =Math.min(min,result)
 }
-    }
 }
 
-check(nums,0);
-console.log(min)
+console.log(cnt)

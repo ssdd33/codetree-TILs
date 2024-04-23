@@ -48,7 +48,7 @@ total_e = e+p_cnt;
 }
 
 if(total_e-total_o<=1){
-console.log(i,min_odd_cnt,p_cnt,left,total_e,total_o)
+
     console.log(total_e+total_o);
     break;
 }

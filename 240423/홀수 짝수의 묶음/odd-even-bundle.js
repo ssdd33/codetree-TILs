@@ -29,12 +29,13 @@ for(let i=3;i<=5;i+=2){
     const left = o%i;
    cnt+=(p_cnt*2)
 if(left>1&&left%2!=0)continue;
-   if(left%2==0){
+
+   if(left>0&&left%2==0){
         cnt++;
     }else if(left==3){
 cnt+=2;
 
-    }else{
+    }else if(left==1){
         cnt--;
     }
 break;

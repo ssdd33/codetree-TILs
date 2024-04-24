@@ -63,7 +63,11 @@ class DoublyLinkedList{
             node.next =null;
         }
 
-        return next;
+        if(node==this.end()){
+            return node;
+        }else{
+            return next;
+        }
     }
 
 begin(){

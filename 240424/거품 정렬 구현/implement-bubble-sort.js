@@ -1,7 +1,7 @@
 const fs=require("fs")
 const input=fs.readFileSync("/dev/stdin").toString().split("\n")
 const n=+input[0]
-const nums=input[1].split(" ").map(Number)
+const nums=input[1].trim().split(" ").map(Number)
 let sorted=true
 do{
     sorted=true

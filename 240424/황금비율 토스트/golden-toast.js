@@ -51,6 +51,7 @@ class DoublyLinkedList{
     }
 
     erase(node){
+        const next =node.next;
         if(this.begin()==node){
             this.head = node.next;
             node.next.prev =null;
@@ -61,6 +62,8 @@ class DoublyLinkedList{
             node.prev =null;
             node.next =null;
         }
+
+        return next;
     }
 
 begin(){
@@ -96,7 +99,7 @@ for(let i=0; i<m; i++){
         }break;
         case 'P':dll.push_front(node,s);
         break;
-        case 'D':dll.erase(node);
+        case 'D':{node = dll.erase(node);}
         break;
     }
 }

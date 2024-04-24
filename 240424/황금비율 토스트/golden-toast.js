@@ -1,8 +1,8 @@
 const fs =require('fs');
 const input =fs.readFileSync("/dev/stdin").toString().split("\n");
 const [n,m]=input[0].split(" ").map(Number);
-const breads = input[1].split("");
-const cmds = input.slice(2,n+2).map(v=>v.split(" "));
+const breads = input[1].trim().split("");
+const cmds = input.slice(2,m+2).map(v=>v.split(" "));
 
 
 class Node {

@@ -42,7 +42,7 @@ class DoublyLinkedList{
             this.head = new_node;
             new_node.next = node;
             node.prev = new_node;
-        }else{
+        }else {
             node.prev.next = new_node;
             new_node.prev = node.prev;
             new_node.next = node;
@@ -55,7 +55,7 @@ class DoublyLinkedList{
             this.head = node.next;
             node.next.prev =null;
             node.next =null;
-        }else{
+        }else if(node !=this.end()){
             node.prev.next= node.next;
             node.next.prev = node.prev;
             node.prev =null;

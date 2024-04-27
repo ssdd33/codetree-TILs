@@ -1,7 +1,7 @@
 const fs =require('fs');
 const input =fs.readFileSync("/dev/stdin").toString().split("\n");
 const n = +input[0];
-let nums = input[1].split(" ").map(Number);
+let nums = input[1].trim().split(" ").map(Number);
 const max_l = Math.max(...nums).toString().length;
 for(let pos =max_l-1;pos>=0;pos-- ){
     let new_arr = Array(10).fill([]);

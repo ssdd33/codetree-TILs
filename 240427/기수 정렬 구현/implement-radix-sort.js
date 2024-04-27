@@ -1,12 +1,13 @@
 const fs =require('fs');
 const input =fs.readFileSync("/dev/stdin").toString().split("\n");
 const n = +input[0];
-let nums = input[1].trim().split(" ").map(Number);
+let nums = input[1].trim().split(" ");
+
 const max_l = Math.max(...nums).toString().length;
 for(let pos =max_l-1;pos>=0;pos-- ){
     let new_arr = Array(10).fill([]);
     for(let i = 0; i<n; i++){
-        const idx = Number(nums[i].toString()[pos])
+        const idx = nums[i][pos]==undefined?0:+nums[i][pos]
         new_arr[idx] = [...new_arr[idx],nums[i]];
     }
 let store = [];

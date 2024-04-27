@@ -7,7 +7,7 @@ nums =nums.map(v=>v.length<max_l?v.padStart(max_l):v)
 let from_front = [];
 for(let pos =max_l-1;pos>=0;pos-- ){
     let new_arr = Array(10).fill([]);
-    for(let i = 0; i<n; i++){
+    for(let i = 0; i<nums.length; i++){
         const idx = nums[i][pos]==" "?0:+nums[i][pos]
         new_arr[idx] = [...new_arr[idx],nums[i]];
     }

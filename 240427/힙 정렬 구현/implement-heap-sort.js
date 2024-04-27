@@ -15,10 +15,10 @@ function heapify(n,i){
     let l = i*2;
     let r= i*2 +1;
 
-    if(l<=n&&arr[i]<arr[l]){
+    if(l<=n&&arr[largest]<arr[l]){
         largest = l;
     }
-    if(r<=n&&arr[l]<=arr[r]){
+    if(r<=n&&arr[largest]<arr[r]){
         largest = r;
     }
 

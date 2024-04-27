@@ -1,7 +1,7 @@
 const fs =require('fs');
 const input =fs.readFileSync("/dev/stdin").toString().split("\n");
 const n = +input[0];
-let arr = input[1].split(" ").map(Number);
+let arr = input[1].trim().split(" ").map(Number);
 
 
 function swap(a,b){

@@ -2,8 +2,8 @@ const fs =require('fs');
 const input =fs.readFileSync("/dev/stdin").toString().split("\n");
 const n = +input[0];
 let nums = input[1].trim().split(" ");
-
 const max_l = Math.max(...nums).toString().length;
+nums.map(v=>v.length<max_l?v.padStart(max_l-v," "):v)
 for(let pos =max_l-1;pos>=0;pos-- ){
     let new_arr = Array(10).fill([]);
     for(let i = 0; i<n; i++){
@@ -20,4 +20,4 @@ let store = [];
     nums = store
 }
 
-console.log(nums.join(" "))
+console.log(nums.map(v=>v.trim()).join(" "))

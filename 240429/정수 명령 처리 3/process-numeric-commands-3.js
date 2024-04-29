@@ -28,7 +28,9 @@ pushFront(x){
 }
 popFront(){
     if(this.empty()==0){
-return d[this.head++];
+        const value= d[this.head]
+        this.head = (this.head+1)%MAX_SIZE;
+return value;
     }
 }
 pushBack(x){
@@ -77,7 +79,7 @@ for(let i=0; i<n; i++){
         break;
                 case 'empty':console.log(d.empty());
         break;
-                case 'front':console.log(d.front())
+                case 'front':{console.log(d.front())}
         break;
                 case 'back':console.log(d.back())
         break;

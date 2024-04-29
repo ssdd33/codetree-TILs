@@ -31,7 +31,7 @@ class Stack{
         if(this.items.length==0){
             console.log('stack is empty')
         }else{
-            console.log(this.items[0])
+            console.log(this.items[this.items.length-1])
         }
     }
 

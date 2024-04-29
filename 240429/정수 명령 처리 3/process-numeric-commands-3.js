@@ -46,7 +46,7 @@ popBack(){
     }
 }
     size(){
-        return this.tail-this.head+MAX_SIZE;
+        return (this.tail-this.head+MAX_SIZE)%MAX_SIZE;
     }
 
 

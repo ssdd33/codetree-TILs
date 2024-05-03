@@ -7,28 +7,12 @@ let ans = 0;
 
 //첫번째 블록
 
-let r= 0;
-while(true){
-    let c =0;
-    while(true){
-        const tmp =[g[r][c],g[r][c+1],g[r+1][c],g[r+1][c+1]]
+for(let r=0; r<n-2;r++){
+    for(let c =0; c<m-2;c++){
+             const tmp =[g[r][c],g[r][c+1],g[r+1][c],g[r+1][c+1]]
         const min = Math.min(...tmp);
         ans = Math.max(tmp.reduce((a,c)=>a+c)-min,ans)
-        if(m-c-2>=2){
-            c+=2;
-        }else if(m-c-1>=2){
-            c+=1;
-        }else{
-            break;
-        }
     }
-if(n-r-2>=2){
-            r+=2;
-        }else if(n-r-1>=2){
-            r+=1;
-        }else{
-            break;
-        }
 }
 
 //두번째 블록

@@ -28,8 +28,8 @@ for(let i=0;i<n;i++){
      
     }
 
-    cnt+=row_cnt.filter(v=>v>=m).length;
-    cnt+=col_cnt.filter(v=>v>=m).length;
+    cnt+=row_cnt.filter(v=>v>=m).length>0?1:0;
+    cnt+=col_cnt.filter(v=>v>=m).length>0?1:0;
 }
 
 console.log(cnt)

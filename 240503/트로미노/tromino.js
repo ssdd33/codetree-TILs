@@ -7,13 +7,15 @@ let ans = 0;
 
 //첫번째 블록
 
-for(let r=0; r<n-2;r++){
-    for(let c =0; c<m-2;c++){
+for(let r=0; r<n-1;r++){
+    for(let c =0; c<m-1;c++){
              const tmp =[g[r][c],g[r][c+1],g[r+1][c],g[r+1][c+1]]
+           
         const min = Math.min(...tmp);
         ans = Math.max(tmp.reduce((a,c)=>a+c)-min,ans)
     }
 }
+
 
 //두번째 블록
 

@@ -18,6 +18,7 @@ if(Math.pow(nk,2)+Math.pow(nk+1,2)<=max_coin){
 }
 
 function new_grid (k){
+    
     const ng = Array((2*k)+n).fill(Array(2*k+n).fill(0));
 
 for(let i=0; i<k;i++){
@@ -75,7 +76,7 @@ for(let i =0; i<n;i++){
 }
 
 
-while(Math.pow(k,2)+Math.pow(k+1,2)>ans*m){
+while(ans!=0&&Math.pow(k,2)+Math.pow(k+1,2)>ans*m){
     
     k--;
     ans = 0

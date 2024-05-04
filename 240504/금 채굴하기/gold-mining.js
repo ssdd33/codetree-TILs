@@ -17,14 +17,15 @@ if(Math.pow(nk,2)+Math.pow(nk+1,2)<=max_coin){
 }
 }
 
-const ng = Array((2*k)+n).fill(Array(2*k+n).fill(0));
-
+function new_grid (k){
+    const ng = Array((2*k)+n).fill(Array(2*k+n).fill(0));
 
 for(let i=0; i<k;i++){
     ng[i]=[...ng[i]]
 }
 
 for(let i =k;i<n+k;i++){
+    
     ng[i]= [...ng[i]]
     for(let j=k;j<n+k;j++){
         if(g[i-k][j-k]==1){
@@ -35,6 +36,9 @@ for(let i =k;i<n+k;i++){
 for(let i =k+n-1;i<2*k+n;i++){
     ng[i]=[...ng[i]]
 }
+return ng;
+}
+
 
 
 function findG(x,y){
@@ -59,12 +63,30 @@ function findG(x,y){
     return cnt;
 }
 
+
+let ng = new_grid(k);
+
 for(let i =0; i<n;i++){
     for( let j=0; j<n;j++){
         const c = findG(i,j);
         
         ans = Math.max(ans,findG(i,j))
     }
+}
+
+
+while(Math.pow(k,2)+Math.pow(k+1,2)>ans*m){
+    
+    k--;
+    ans = 0
+ng = new_grid(k);
+for(let i =0; i<n;i++){
+    for( let j=0; j<n;j++){
+        const c = findG(i,j);
+        
+        ans = Math.max(ans,findG(i,j))
+    }
+}
 }
 
 console.log(ans)

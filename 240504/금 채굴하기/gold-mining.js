@@ -24,8 +24,9 @@ let max = 0;
 
 for(let i=0; i<n; i++){
     for(let j=0; j<n;j++){
-for(let k =0; k<=n-1;k++){
+for(let k =0; k<(n-1)*2;k++){
     const numOfGold = getNumOfGold(i,j,k);
+
     if(getAreaOfK(k)<=numOfGold*m){
        
         max = Math.max(max,numOfGold);

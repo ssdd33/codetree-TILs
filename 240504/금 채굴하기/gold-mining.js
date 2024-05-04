@@ -7,16 +7,28 @@ function getAreaOfK(k){
     return k*k+(k+1)*(k+1);
 }
 
+function inRange(x,y){
+    return x>=0&&x<n&&y>=0&&y<n;
+}
+
 function getNumOfGold(row,col,k){
-    let numOfGold =0;
-    for(let i=0; i<n; i++){
-        for(let j=0;j<n;j++){
-            if(Math.abs(row-i)+Math.abs(col-j)<=k){
-                numOfGold+=g[i][j]
+    const dx =[1,1,-1,-1];
+    const dy =[-1,1,1,-1];
+
+    let numOfGold =g[row][col];
+
+for(let curK =1; curK<=k;curK++){
+    let curX = row-curK,curY=col;
+    for(let dir=0; dir<4; dir++){
+        for (let step = 0; step<curK;step++){
+            if(inRange(curX,curY)){
+                numOfGold+=g[curX][curY];
             }
+            curX+=dx[dir];
+            curY+=dy[dir];
         }
     }
-
+}
     return numOfGold;
 }
 

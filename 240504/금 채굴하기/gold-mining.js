@@ -15,12 +15,15 @@ function getNumOfGold(row,col,k){
     const dx =[1,1,-1,-1];
     const dy =[-1,1,1,-1];
 
-    let numOfGold =g[row][col];
+    let numOfGold =0;
+    if(k==0){
+        return g[row][col]
+    }
 
-for(let curK =1; curK<=k;curK++){
-    let curX = row-curK,curY=col;
+
+    let curX = row-k,curY=col;
     for(let dir=0; dir<4; dir++){
-        for (let step = 0; step<curK;step++){
+        for (let step = 0; step<k;step++){
             if(inRange(curX,curY)){
                 numOfGold+=g[curX][curY];
             }
@@ -28,7 +31,7 @@ for(let curK =1; curK<=k;curK++){
             curY+=dy[dir];
         }
     }
-}
+
     return numOfGold;
 }
 
@@ -36,8 +39,9 @@ let max = 0;
 
 for(let i=0; i<n; i++){
     for(let j=0; j<n;j++){
+        let numOfGold =0;
 for(let k =0; k<(n-1)*2+1;k++){
-    const numOfGold = getNumOfGold(i,j,k);
+    numOfGold += getNumOfGold(i,j,k);
 
     if(getAreaOfK(k)<=numOfGold*m){
        

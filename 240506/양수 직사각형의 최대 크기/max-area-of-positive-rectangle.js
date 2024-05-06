@@ -10,7 +10,7 @@ function isAllPos(x,y,k,l){
     let sum = 0
     for(let i = x;i <x+k;i++){
         for(let j=y;j<y+l;j++){
-if(g[i][j]<0){
+if(g[i][j]<=0){
     return false;
 }
         }

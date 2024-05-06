@@ -4,7 +4,7 @@ const [n,m]=input[0];
 const g = input.slice(1);
 
 
-let ans = Number.MIN_SAFE_INTEGER;
+let ans = 0;
 
 function isAllPos(x,y,k,l){
     let sum = 0

@@ -14,18 +14,22 @@ let d =0;
 let prev = 0;
 let [x,y]=[r-1,c-1]
 
-while(cnt<(m1+1)*(m2+1)){
+while(cnt<((m1+1)*2)+((m2-1)*2)){
 
     const dir = d%4
         for(let s = 0; s<step[dir%2];s++){
-            
+       
 const tmp = m[x][y];
 if(prev>0){
     m[x][y] = prev;
     cnt++;
+    if(cnt==((m1+1)*2)+((m2-1)*2)){
+        break;
+    }
 }
 [x,y]=[x+dx[dir],y+dy[dir]]
 prev = tmp;
+
         }
         d++
 }

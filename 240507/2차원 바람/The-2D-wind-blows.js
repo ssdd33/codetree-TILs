@@ -40,6 +40,7 @@ function rotate_Boundary(r1,c1,r2,c2){
     
     const tmp = boundary.pop();
     const nb = [tmp,...boundary];
+    
 // 0~ c2-c1 : 
 // c2-c1+1 ~ (c2-c1+1 )+ (r2-r1-1) last
 //c2-c1+1 + r2-r1 ~ (c2-c1+1 + r2-r1)+ c2-c1 : reverse
@@ -51,8 +52,8 @@ function rotate_Boundary(r1,c1,r2,c2){
 
     }
     for(let i=r1+1; i<r2;i++){
-        
-        g[i][c1]= nb[nb.length-(r2-i)]
+
+        g[i][c1]= nb[nb.length-(i-r1)]
         g[i][c2]=nb[c2-c1-r1+i] 
     }
 }
@@ -61,7 +62,8 @@ for(let i=0;i<q;i++){
     const [r1,c1,r2,c2] = w[i]
 
     rotate_Boundary(...w[i]);
-
+  
+ 
     const nm = Array.from(Array(n),(arr)=>Array(m).fill(-1));
     for(let r =r1; r<=r2;r++ ){
         for(let c= c1;c<=c2;c++){
@@ -70,6 +72,9 @@ for(let i=0;i<q;i++){
     }
 
 g = nm.map((v,i)=>v.map((c,j)=>c<0?g[i][j]:c));
+
+// console.log(g.reduce((a,c)=>a+`${c.join(" ")}\n`,''))
+// console.log('--------------------------------------------------------------')
 }
 
 

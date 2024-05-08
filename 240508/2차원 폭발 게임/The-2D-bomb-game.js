@@ -72,19 +72,35 @@ function tilt90(){
 
 
 for(let i=1; i<=k;i++){
-    expl();
+    let didExplode =true;
+    while(didExplode){
+      didExplode = expl();
+    }
+    
     tilt90();
 
 }
 
+let didExplode =true;
+let snapshot;
+let tilt_cnt =0;
 
-    while(true){
-        if(!expl()){
-            break;
-        }else{
-            tilt90();
+while(true){
+
+    while(didExplode){
+        didExplode = expl();
+    }
+    tilt90();
+    if(!didExplode){
+        if(tilt_cnt==0) {
+            snapshot = g.reduce((a,c)=>a+c.join(),'');
         }
-    
+        tilt_cnt++
+    }else{
+        tilt_cnt =0;
+    }
+  
+    if(tilt_cnt>1&&snapshot== g.reduce((a,c)=>a+c.join(),''))break;
 }
 
 console.log(g.reduce((a,c)=>a+c.filter(v=>v>0).length,0))

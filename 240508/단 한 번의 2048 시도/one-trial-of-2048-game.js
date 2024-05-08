@@ -15,7 +15,7 @@ for(let i=0; i<4;i++){
             const curNum = grid[i][curIdx];
 
             if(curNum!=0){
-                if(curIdx!=3&&nextIdx>=3&&(curNum == grid[i][nextIdx])){
+                if(curIdx!=3&&nextIdx<=3&&(curNum == grid[i][nextIdx])){
                     ans[i][ansIdx] = curNum*2;
                     curIdx = nextIdx+1;
                     nextIdx++;

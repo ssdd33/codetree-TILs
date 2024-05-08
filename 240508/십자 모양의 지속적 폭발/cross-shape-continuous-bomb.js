@@ -1,7 +1,7 @@
 const fs =require('fs');
 const input =fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 const [n,m]=input[0].split(" ").map(Number);
-const g = input.slice(1,1+n).map(v=>v.split(" ").map(Number));
+const g = input.slice(1,1+n).map(v=>v.trim().split(" ").map(Number));
 const cs = input.slice(1+n,1+n+m).map(v=>+v-1);
 
 function inRange(x,y){

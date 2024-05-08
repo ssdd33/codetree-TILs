@@ -1,7 +1,7 @@
 const fs =require('fs');
 const input =fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 const n = +input[0];
-const g = input.slice(1,1+n).map(v=>v.split(" ").map(Number));
+const g = input.slice(1,1+n).map(v=>v.trim().split(" ").map(Number));
 const [r,c] = input[1+n].split(" ").map(v=>+v-1);
 
 const dx =[-1,0,1,0]
@@ -13,12 +13,14 @@ function inRange(x,y){
 
 const sizeOfExpl = g[r][c];
 g[r][c] = 0;
+
 if(sizeOfExpl>1){
 
     for(let i=0; i<4;i++){
             let [x,y]=[r,c];
         for(let j=1; j<sizeOfExpl;j++){
            [x,y] = [x+dx[i],y+dy[i]]
+           
            if(inRange(x,y)){
             g[x][y] = 0
            }else{

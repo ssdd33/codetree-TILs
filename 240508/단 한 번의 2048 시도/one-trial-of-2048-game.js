@@ -22,7 +22,7 @@ for(let i=0; i<4;i++){
                     ansIdx++;
                 }else if(nextIdx>3||grid[i][nextIdx]!=0){
                         ans[i][ansIdx] = curNum;
-                        curIdx++;
+                        curIdx =nextIdx;
                         ansIdx++;
                     }
                 }else{
@@ -48,7 +48,7 @@ for(let i=0; i<4;i++){
                     ansIdx--;
                 }else if(nextIdx<0||grid[i][nextIdx]!=0){
                         ans[i][ansIdx] = curNum;
-                        curIdx--;
+                        curIdx=nextIdx;
                         ansIdx--;
                     }
                 }else{
@@ -77,7 +77,7 @@ for(let i=0; i<4;i++){
                     ansIdx++;
                 }else if(nextIdx >3 || grid[nextIdx][i]!=0){
                         ans[ansIdx][i] = curNum;
-                        curIdx++;
+                        curIdx=nextIdx;
                         ansIdx++;
                     }
                 }else{

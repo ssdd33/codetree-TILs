@@ -82,25 +82,9 @@ for(let i=1; i<=k;i++){
 }
 
 let didExplode =true;
-let snapshot;
-let tilt_cnt =0;
 
-while(true){
-
-    while(didExplode){
-        didExplode = expl();
-    }
-    tilt90();
-    if(!didExplode){
-        if(tilt_cnt==0) {
-            snapshot = g.reduce((a,c)=>a+c.join(),'');
-        }
-        tilt_cnt++
-    }else{
-        tilt_cnt =0;
-    }
-  
-    if(tilt_cnt>1&&snapshot== g.reduce((a,c)=>a+c.join(),''))break;
+while(didExplode){
+didExplode =expl();
 }
 
 console.log(g.reduce((a,c)=>a+c.filter(v=>v>0).length,0))

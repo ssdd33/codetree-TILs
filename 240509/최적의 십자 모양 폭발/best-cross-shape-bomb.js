@@ -45,9 +45,18 @@ function expl(x,y){
         }
     }
 
-
+    let lastIdx = -1;
     for(let r =x-sizeOfExpl-1; r>=0;r--){
-        copy[r+(2*sizeOfExpl)+1][y] =copy[r][y]
+        if(lastIdx<0){
+            if(r+(2*sizeOfExpl)+1>n-1){
+                lastIdx = n-1;
+            }else{
+                copy[r+(2*sizeOfExpl)+1][y] =copy[r][y]
+            }
+        }else{
+            copy[lastIdx][y] =copy[r][y]
+            lastIdx--;
+        }
         copy[r][y] = 0;
     }
 
@@ -56,10 +65,12 @@ function expl(x,y){
 
 
 function searchPair(grid){
+    
     let cnt =0;
     //가로
     for(let i=0; i<n; i++){
         for(let j=0; j<n-1; j++){
+            
             if(grid[i][j]!=0&&grid[i][j]==grid[i][j+1]){
                 cnt++
             }

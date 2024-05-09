@@ -11,58 +11,44 @@ function inRange(x,y){
 
 function expl(x,y){
     const copy = Array.from(g,(a)=>Array.from(a));
-
     const sizeOfExpl = copy[x][y]-1;
+    const dx=[-1,0,1,0]
+    const dy=[0,1,0,-1]
+    copy[x][y]=0;
 
-  //왼쪽
-    for(let c = y-sizeOfExpl;c<y;c++){
-        copy[x][c]=0
-        for(let r =x-1;r>=0;r--){
+    for(let i=0; i<4;i++){
+        let[r,c]=[x,y]
+        for(let j =1; j<=sizeOfExpl;j++){
+            r+=dx[i]
+            c+=dy[i]
             if(inRange(r,c)){
-                copy[r+1][c] =copy[r][c];
-                copy[r][c]=0;
+                  copy[r][c] = 0;
             }
+          
         }
-    }
-
-    //오른쪽
-    for(let c =y+1; c<=y+sizeOfExpl;c++){
-        copy[x][c]=0
-      for(let r =x-1;r>=0;r--){
-            if(inRange(r,c)){
-                copy[r+1][c] =copy[r][c];
-                copy[r][c]=0;
-            }
-        }
-    }
-
-
-
-  //가운데
-    for(let r =x-sizeOfExpl; r<=x+sizeOfExpl;r++){
-        if(inRange(r,y)){
-            copy[r][y] =0;
-        }
-    }
-
-    let lastIdx = -1;
-    for(let r =x-sizeOfExpl-1; r>=0;r--){
-        if(lastIdx<0){
-            if(r+(2*sizeOfExpl)+1>n-1){
-                lastIdx = n-1;
-            }else{
-                copy[r+(2*sizeOfExpl)+1][y] =copy[r][y]
-            }
-        }else{
-            copy[lastIdx][y] =copy[r][y]
-            lastIdx--;
-        }
-        copy[r][y] = 0;
     }
 
     return copy;
 }
 
+function fallDown(grid){
+
+for(let i=n-1;i>=1;i--){
+    for(let j =0;j<n;j++){
+        if(grid[i][j]==0){
+            for(let k=i-1; k>=0;k--){
+                if(grid[k][j]!=0){
+                    grid[i][j] = grid[k][j];
+                    grid[k][j]=0;
+                    break;
+                }
+            }
+
+        }
+    }
+}
+return grid;
+}
 
 function searchPair(grid){
     
@@ -92,9 +78,8 @@ function searchPair(grid){
 
 for(let i=0;i<n;i++){
     for(let j=0; j<n; j++){
-        const resultOfExpl = expl(i,j);
+        const resultOfExpl = fallDown(expl(i,j));
         const cnt = searchPair(resultOfExpl);
-  
         ans = Math.max(ans,cnt)
     }
 }

@@ -11,7 +11,7 @@ const dx =[-1,1,0,0];
 const dy =[0,0,-1,1];
 
 function inRange(x,y){
-    return x>=0&&x<n;y>=0&&x<n;
+    return x>=0&&x<n&&y>=0&&x<n;
 }
 
 while(true){

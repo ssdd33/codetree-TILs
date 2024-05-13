@@ -55,7 +55,6 @@ if(b_cnt==0||b_cnt==(n*2)+(n-2)*2){
       //현 위치에서 우측벽이 있는지 확인
       // 있는 경우  : 진행경로에 벽이 있다면 : 반시계 회전 \ 없다면 전진
       //없는 경우 : 시계방향 회전 
-maze[curX][curY] =0;
       if(!inRange(curX,curY)) break;
       if((cnt!=0&&curX==x-1&&curY==y-1&&curD==0)){
         solved =false; 

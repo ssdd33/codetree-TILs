@@ -8,19 +8,18 @@ const maze =input.slice(2,2+n).map(v=>v.trim().split(""));
 //탈출이 불가능한 경우 
 //1.가장자리에 벽이 없는 경우 (3.가장자리벽과 이어지는 벽이 없는 경우) 
 
-let isBoundaryEmpty =true;
+let b_cnt = 0;
 for(let i=0; i<n;i++){
     for(let j=0;j<n; j++){
   
             if(maze[i][j]=='#'&&(i==0||i==n-1||j==0||j==n-1)){
-                isBoundaryEmpty =false;
-                break;
+            b_cnt++;
             }
         
     }
 }
 
-if(isBoundaryEmpty){
+if(b_cnt==0||b_cnt==(n*2)+(n-2)*2){
     console.log(-1)
 }else{
      const dx = [0,-1,0,1];

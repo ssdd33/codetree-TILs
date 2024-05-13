@@ -40,7 +40,7 @@ if(isBoundaryEmpty){
 
   
     while(true){
-        
+        // console.log(curX,curY)
         //현 위치가 격자를 벗어난경우 break;
       //현 위치에서 우측벽이 있는지 확인
       // 있는 경우  : 진행경로에 벽이 있다면 : 반시계 회전 \ 없다면 전진
@@ -57,14 +57,20 @@ if(isBoundaryEmpty){
         const ny = curY + dy[curD];
 
         if(inRange(nx,ny)&&maze[nx][ny]=='#'){
+            // console.log('turn left')
             curD++
         }else{
+            // console.log('go foward')
             curX = nx;
             curY = ny;
             cnt++
         }
       }else{
+        // console.log('turn right')
         curD = right;
+        curX = curX+ dx[curD];
+        curY = curY +dy[curD];
+        cnt++
       }
     }
 

@@ -20,9 +20,7 @@ for(let i=0; i<n;i++){
     }
 }
 
-if(isBoundaryEmpty){
-    console.log(-1);
-}else{
+
     const dx = [0,-1,0,1];
     const dy = [1,0,-1,0];
     //진행 방향에 벽이 있을 때 +1
@@ -33,12 +31,23 @@ if(isBoundaryEmpty){
     let curY = y-1;
     let curD = 0;
     let cnt =0;
+    let solved =true;
 
     function inRange(x,y){
         return x>=0&&x<n&&y>=0&&y<n;
     }
 
-  
+    function isIsolatedBlock(bx,by){
+        const b_dx =[-1,0,1,0];
+        const b_dy = [0,1,0,-1];
+
+        for(let i=0;i<4;i++){
+            if(maze[bx+b_dx[i]][by+b_dy[i]]=='#')return false;
+        }
+
+        return true;
+    }
+
     while(true){
         // console.log(curX,curY)
         //현 위치가 격자를 벗어난경우 break;
@@ -53,6 +62,10 @@ if(isBoundaryEmpty){
       const ry = curY+dy[right];
 
       if(inRange(rx,ry)&&maze[rx][ry]=='#'){
+        if(isIsolatedBlock(rx,ry)){
+            solved =false;
+            break;
+        }
         const nx = curX +dx[curD];
         const ny = curY + dy[curD];
 
@@ -74,6 +87,4 @@ if(isBoundaryEmpty){
       }
     }
 
-    console.log(cnt)
-
-}
+    console.log(solved?cnt:-1)

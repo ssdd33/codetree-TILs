@@ -50,7 +50,7 @@ if(b_cnt==0||b_cnt==(n*2)+(n-2)*2){
     }
 
     while(true){
-        // console.log(curX,curY)
+        // console.log(curX,curY,curD)
         //현 위치가 격자를 벗어난경우 break;
       //현 위치에서 우측벽이 있는지 확인
       // 있는 경우  : 진행경로에 벽이 있다면 : 반시계 회전 \ 없다면 전진
@@ -72,7 +72,7 @@ if(b_cnt==0||b_cnt==(n*2)+(n-2)*2){
 
         if(inRange(nx,ny)&&maze[nx][ny]=='#'){
             // console.log('turn left')
-            curD++
+            curD = (curD+1)%4
         }else{
             // console.log('go foward')
             curX = nx;

@@ -43,7 +43,7 @@ if(b_cnt==0||b_cnt==(n*2)+(n-2)*2){
         const b_dy = [0,1,0,-1];
 
         for(let i=0;i<4;i++){
-            if(maze[bx+b_dx[i]][by+b_dy[i]]=='#')return false;
+            if(!inRange(bx+b_dx[i],by+b_dy[i])|| maze[bx+b_dx[i]][by+b_dy[i]]=='#')return false;
         }
 
         return true;

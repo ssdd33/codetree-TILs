@@ -20,8 +20,10 @@ for(let i=0; i<n;i++){
     }
 }
 
-
-    const dx = [0,-1,0,1];
+if(isBoundaryEmpty){
+    console.log(-1)
+}else{
+     const dx = [0,-1,0,1];
     const dy = [1,0,-1,0];
     //진행 방향에 벽이 있을 때 +1
     //벽이 없을 때 -> 우측 벽이 있는경우 : 전진 |없는 경우 : +3%4 
@@ -88,3 +90,5 @@ for(let i=0; i<n;i++){
     }
 
     console.log(solved?cnt:-1)
+
+}

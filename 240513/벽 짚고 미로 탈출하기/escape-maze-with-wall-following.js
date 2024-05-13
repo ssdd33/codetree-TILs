@@ -49,6 +49,16 @@ if(b_cnt==0||b_cnt==(n*2)+(n-2)*2){
         return true;
     }
 
+    function isNoWay(cx,cy){
+        const c_dx =[-1,0,1,0];
+        const c_dy =[0,1,0,-1];
+        for(let i=0;i<4;i++){
+            if(!inRange(cx+c_dx[i],cy+c_dy[i])||maze[cx+c_dx[i]][cy+c_dy[i]]!='#')return false;
+        }
+
+        return true;
+    }
+
     while(true){
 // console.log(curX,curY,curD)
         //현 위치가 격자를 벗어난경우 break;
@@ -56,7 +66,8 @@ if(b_cnt==0||b_cnt==(n*2)+(n-2)*2){
       // 있는 경우  : 진행경로에 벽이 있다면 : 반시계 회전 \ 없다면 전진
       //없는 경우 : 시계방향 회전 
       if(!inRange(curX,curY)) break;
-      if((cnt!=0&&curX==x-1&&curY==y-1&&curD==0)){
+ 
+      if(cnt!=0&&curX==x-1&&curY==y-1&&curD==0){
         solved =false; 
         break;
       }
@@ -65,8 +76,8 @@ if(b_cnt==0||b_cnt==(n*2)+(n-2)*2){
       const ry = curY+dy[right];
 
       if(inRange(rx,ry)&&maze[rx][ry]=='#'){
-        if(isIsolatedBlock(rx,ry)){
-            solved =false;
+        if(isIsolatedBlock(rx,ry)||isNoWay(curX,curY)){
+            solved = false;
             break;
         }
         const nx = curX +dx[curD];

@@ -39,10 +39,10 @@ if(b_cnt==0||b_cnt==(n*2)+(n-2)*2){
     }
 
     function isIsolatedBlock(bx,by){
-        const b_dx =[-1,0,1,0];
-        const b_dy = [0,1,0,-1];
+        const b_dx =[-1,0,1,0,-1,-1,1,1];
+        const b_dy = [0,1,0,-1,-1,1,-1,1];
 
-        for(let i=0;i<4;i++){
+        for(let i=0;i<8;i++){
             if(!inRange(bx+b_dx[i],by+b_dy[i])|| maze[bx+b_dx[i]][by+b_dy[i]]=='#')return false;
         }
 
@@ -50,12 +50,12 @@ if(b_cnt==0||b_cnt==(n*2)+(n-2)*2){
     }
 
     while(true){
-
+// console.log(curX,curY,curD)
         //현 위치가 격자를 벗어난경우 break;
       //현 위치에서 우측벽이 있는지 확인
       // 있는 경우  : 진행경로에 벽이 있다면 : 반시계 회전 \ 없다면 전진
       //없는 경우 : 시계방향 회전 
-
+maze[curX][curY] =0;
       if(!inRange(curX,curY)) break;
       if((cnt!=0&&curX==x-1&&curY==y-1&&curD==0)){
         solved =false; 
@@ -90,7 +90,9 @@ if(b_cnt==0||b_cnt==(n*2)+(n-2)*2){
         cnt++
       }
     }
-
+// if(!solved){
+//     maze.forEach(v=>console.log(v.join("")))
+// }
     console.log(solved?cnt:-1)
 
 }

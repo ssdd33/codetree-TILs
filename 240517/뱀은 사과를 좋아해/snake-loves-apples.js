@@ -8,7 +8,7 @@ const grid = Array.from(Array(n),(a)=>Array(n).fill(0));
 
 for(let i=0; i<m;i++){
     const [x,y] = apples[i];
-    grid[x][y] =2;
+    grid[x-1][y-1] =2;
 }
 
 function inRange(x,y){
@@ -32,6 +32,10 @@ for(let i=0; i<k;i++){
             break;
         }
         const [nx,ny] = [x+dx[dir_map[d]],y+dy[dir_map[d]]];
+        if(grid[nx][ny]!=2){
+           const [tx,ty]= snake_que.pop();
+           grid[tx][ty]= 0;
+        }
         if(grid[nx][ny]==1){
             gameOver =true;
             cnt++;
@@ -39,10 +43,9 @@ for(let i=0; i<k;i++){
         }
            grid[nx][ny] =1;
            snake_que.unshift([nx,ny]);
-        if(grid[nx][ny]==0){
-            snake_que.pop();
-        }
+
         cnt++;
+   
     }
     if(gameOver)break;
 }

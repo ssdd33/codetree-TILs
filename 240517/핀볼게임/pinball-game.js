@@ -18,12 +18,19 @@ const d_switch ={1:{0:1,1:0,2:3,3:2},2:{0:3,1:2,2:1,3:0}}
 function getTimeToOut(x,y){
     let [cx,cy] = [x,y];
     let cnt= 1;
+    let possibleToOut =true;
+    const visited = Array.from(Array(n),(a)=>Array(n).fill(4));
 
     while(true){
         cnt++;
         const [nx,ny]=[cx+dx[cur_dir],cy+dy[cur_dir]]
         if(!inRange(nx,ny))break;
+        if(visited[nx][ny]==cur_dir){
+            possibleToOut = false;
+            break;
+        }
         [cx,cy]=[nx,ny];
+        visited[cx][cy]=cur_dir;;
         const wall = grid[nx][ny];
         if(wall !=0){
             cur_dir = d_switch[wall][cur_dir]
@@ -31,14 +38,14 @@ function getTimeToOut(x,y){
        
     }
 
- return cnt;
+ return possibleToOut?cnt:0;
 }
 
 for(let i=0; i<n; i++){
     for(let j=0;j<n;j++){
 
         if(i==0||i==n-1||j==0||j==n-1){
-            let [x,y] = [i,j];
+        //  console.log(i,j)
             if(i==n-1){
                 cur_dir=0;
                 ans = Math.max(ans, getTimeToOut(i,j))

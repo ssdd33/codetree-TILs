@@ -27,11 +27,11 @@ for(let i=0; i<k;i++){
 
     for(let j=0; j<s;j++){
         const [x,y] = snake_que[0];
- 
         const [nx,ny] = [x+dx[dir_map[d]],y+dy[dir_map[d]]];
+        cnt++;
+        
         if(!inRange(nx,ny)){
             gameOver =true;
-            cnt++;
             break;
         }
         if(grid[nx][ny]!=2){
@@ -40,13 +40,10 @@ for(let i=0; i<k;i++){
         }
         if(grid[nx][ny]==1){
             gameOver =true;
-            cnt++;
             break;
         }
            grid[nx][ny] =1;
            snake_que.unshift([nx,ny]);
-
-        cnt++;
    
     }
     if(gameOver)break;

@@ -27,11 +27,13 @@ for(let i=0; i<k;i++){
 
     for(let j=0; j<s;j++){
         const [x,y] = snake_que[0];
-        if(!inRange(x,y)){
+ 
+        const [nx,ny] = [x+dx[dir_map[d]],y+dy[dir_map[d]]];
+        if(!inRange(nx,ny)){
             gameOver =true;
+            cnt++;
             break;
         }
-        const [nx,ny] = [x+dx[dir_map[d]],y+dy[dir_map[d]]];
         if(grid[nx][ny]!=2){
            const [tx,ty]= snake_que.pop();
            grid[tx][ty]= 0;

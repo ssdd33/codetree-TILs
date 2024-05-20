@@ -17,9 +17,14 @@ for(let i=p-1; i<m;i++){
     members = members.filter(v=>v!=m)
 }
 
-if(p!=1&&msgs[p-1][1]==msgs[p-2][1]){
-    members = members.filter(v=>v!=msgs[p-2][0])
+let msg_idx = p-1;
+while(msg_idx>1){
+if(msgs[msg_idx][1]==msgs[msg_idx-1][1]){
+    members = members.filter(v=>v!=msgs[msg_idx-1][0])
+    msg_idx--;
+}else{
+    break;
 }
-
+}
 console.log(members.join(" "))
 }

@@ -84,7 +84,7 @@ function newPos(x,y,d){
 }
 
 const ans =[];
-const grid;
+let grid;
 for(let i=0; i<t;i++){
 let marbles = tcs[i];
 //구슬이 초기 위치에서 어느방면으로 이동할지 모름으로(좌표의 확장) 매초마다 새로운 좌표를 그려 현재위치 확인
